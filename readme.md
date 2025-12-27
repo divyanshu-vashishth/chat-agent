@@ -12,19 +12,27 @@ PostgreSQL, Drizzle, SvelteKit, Tailwind, and Gemini API.
 
 ### Backend
 cd api
+
 cp .env.local .env
 
-## update DATABASE_URL and GEMINI_API_KEY in .env
+## Update DATABASE_URL and GEMINI_API_KEY in .env
 
 bun install
+
 bunx drizzle-kit generate --dialect postgresql --schema ./src/db/schema.ts --out ./drizzle
+
 bun run src/db/migrate.ts
+
 bun run src/index.ts
 
 ### Frontend
+
 cd client
+
 cp .env.local .env
+
 bun install
+
 bun dev
 
 ![Screenshot](client/static/spur-chat-agent.png)
